@@ -1,0 +1,100 @@
+.about {
+  padding: 20px 24px 48px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.aboutContent {
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.aboutHeader {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.aboutHeader h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.aboutHeader p {
+  color: #777;
+}
+
+.pfp {
+  width: 64px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.pfp img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.contactItems {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 8px;
+}
+
+.contactLabel {
+  color: #777;
+  text-align: right;
+  text-transform: lowercase;
+}
+
+.contactItems p:not(:last-child),
+.contactItems ul:not(:last-child),
+.contactItems ol:not(:last-child) {
+  margin-bottom: calc(13.5px * 1.4);
+}
+
+.contactItems a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contactItems p a {
+  text-decoration: underline;
+}
+
+.contactItems ul,
+.contactItems ol {
+  padding-left: 1em;
+}
+
+.contactItems li {
+  margin-bottom: calc((13.5px * 1.4) / 2);
+}
+
+.contactItems ul li {
+  list-style-type: disc;
+}
+
+.contactItems ol li {
+  list-style-type: decimal;
+}
+
+.contactItems hr {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 1px;
+  border: none;
+  outline: none;
+  background-color: #f2f2f2;
+}

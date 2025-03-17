@@ -1,0 +1,948 @@
+{
+  "general": {
+    "profilePhoto": "/content/media/profilePhoto.jpg",
+    "username": "r1sh",
+    "displayName": "Rishabh",
+    "profession": null,
+    "location": "Mumbai, India",
+    "pronouns": "He/Him",
+    "byline": "Mumbai, India, He/Him",
+    "website": null,
+    "websiteURL": null,
+    "about": null,
+    "status": {
+      "text": null,
+      "emoji": null,
+      "timestamp": null
+    },
+    "sectionOrder": null
+  },
+  "projects": [
+    {
+      "id": "tQc0zK2x05aqoPFaXRsZ",
+      "year": "2024",
+      "heading": "Logo Designer at Nebo",
+      "url": "https://www.instagram.com/nebofetehouse/",
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1000,
+          "height": 1000,
+          "url": "/content/media/Logo-Designer-at-Nebo-1.png"
+        },
+        {
+          "type": "image",
+          "width": 1904,
+          "height": 1370,
+          "url": "/content/media/Logo-Designer-at-Nebo-2.png"
+        },
+        {
+          "type": "image",
+          "width": 2422,
+          "height": 1372,
+          "url": "/content/media/Logo-Designer-at-Nebo-3.png"
+        },
+        {
+          "type": "image",
+          "width": 3600,
+          "height": 2400,
+          "url": "/content/media/Logo-Designer-at-Nebo-4.png"
+        }
+      ],
+      "type": "project",
+      "title": "Logo Designer",
+      "company": "Nebo"
+    },
+    {
+      "id": "hYCncRnYs7CwEJ9nFt5w",
+      "year": "2023",
+      "heading": "Pitch Deck Designer at Beardman Films",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 605,
+          "height": 743,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1918,
+          "height": 1079,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-8.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Pitch Deck Designer",
+      "company": "Beardman Films"
+    },
+    {
+      "id": "vCzeZzJDVqHiVpC9jgsM",
+      "year": "2023",
+      "heading": "Social Media Designer at Hades Group",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1350,
+          "url": "/content/media/Social-Media-Designer-at-Hades-Group-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1920,
+          "url": "/content/media/Social-Media-Designer-at-Hades-Group-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1350,
+          "url": "/content/media/Social-Media-Designer-at-Hades-Group-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 3112,
+          "height": 4000,
+          "url": "/content/media/Social-Media-Designer-at-Hades-Group-4.jpg"
+        }
+      ],
+      "type": "project",
+      "title": "Social Media Designer",
+      "company": "Hades Group"
+    }
+  ],
+  "sideProjects": [
+    {
+      "id": "HzxQIRlk1EaqdS0xp3D8",
+      "year": "Ongoing",
+      "heading": "Fun Stuff",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 564,
+          "height": 846,
+          "url": "/content/media/Fun-Stuff-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 768,
+          "height": 1000,
+          "url": "/content/media/Fun-Stuff-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 810,
+          "height": 1080,
+          "url": "/content/media/Fun-Stuff-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1156,
+          "height": 1542,
+          "url": "/content/media/Fun-Stuff-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1156,
+          "height": 1156,
+          "url": "/content/media/Fun-Stuff-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 940,
+          "height": 1671,
+          "url": "/content/media/Fun-Stuff-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1156,
+          "height": 1593,
+          "url": "/content/media/Fun-Stuff-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1136,
+          "height": 1671,
+          "url": "/content/media/Fun-Stuff-8.jpg"
+        }
+      ],
+      "type": "sideProject",
+      "title": "Fun Stuff",
+      "company": ""
+    },
+    {
+      "id": "ghSLQplGzuGYU6rE0sZx",
+      "year": "2025",
+      "heading": "Photography",
+      "url": "https://www.cosmos.so/r1shabh/(this-is)-real.life1",
+      "collaborators": [],
+      "description": "shot on iPhone",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1448,
+          "height": 2172,
+          "url": "/content/media/Photography-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1500,
+          "height": 2000,
+          "url": "/content/media/Photography-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1448,
+          "height": 2172,
+          "url": "/content/media/Photography-3.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1536,
+          "height": 2048,
+          "url": "/content/media/Photography-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Photography-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1333,
+          "height": 2000,
+          "url": "/content/media/Photography-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2000,
+          "height": 1333,
+          "url": "/content/media/Photography-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1448,
+          "height": 2172,
+          "url": "/content/media/Photography-8.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1125,
+          "height": 2000,
+          "url": "/content/media/Photography-9.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1512,
+          "height": 2016,
+          "url": "/content/media/Photography-10.jpg"
+        }
+      ],
+      "type": "sideProject",
+      "title": "Photography",
+      "company": ""
+    },
+    {
+      "id": "c6yn6U9DXJflscpMRUOe",
+      "year": "2025",
+      "heading": "Club Posters",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 2060,
+          "height": 3659,
+          "url": "/content/media/Club-Posters-1.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2626,
+          "height": 3376,
+          "url": "/content/media/Club-Posters-2.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1920,
+          "url": "/content/media/Club-Posters-3.png"
+        },
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1920,
+          "url": "/content/media/Club-Posters-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 2475,
+          "height": 4400,
+          "url": "/content/media/Club-Posters-5.jpg"
+        },
+        {
+          "type": "image",
+          "width": 939,
+          "height": 1671,
+          "url": "/content/media/Club-Posters-6.jpg"
+        },
+        {
+          "type": "image",
+          "width": 940,
+          "height": 1671,
+          "url": "/content/media/Club-Posters-7.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1080,
+          "height": 1920,
+          "url": "/content/media/Club-Posters-8.png"
+        }
+      ],
+      "type": "sideProject",
+      "title": "Club Posters",
+      "company": ""
+    }
+  ],
+  "exhibitions": [],
+  "talks": [],
+  "writing": [],
+  "awards": [],
+  "features": [],
+  "workExperience": [
+    {
+      "id": "LtOKMdDD3Hvptckqrah0",
+      "year": "2023 — Now",
+      "heading": "Creative Director at T-rex Media",
+      "url": "https://www.trexmedia.in",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "workExperience",
+      "title": "Creative Director",
+      "company": "T-rex Media",
+      "location": "Mumbai"
+    }
+  ],
+  "volunteering": [
+    {
+      "id": "d0JcULJN3EI0NCepdA5I",
+      "year": "2024 — 2024",
+      "heading": "Bachpanshala",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 746,
+          "height": 995,
+          "url": "/content/media/Bachpanshala.jpg"
+        }
+      ],
+      "type": "volunteering",
+      "title": "",
+      "organization": "Bachpanshala",
+      "location": "Gurgaon"
+    }
+  ],
+  "education": [
+    {
+      "id": "yQOgri1ci84Y6KBQnw7I",
+      "year": "2023 — Now",
+      "heading": "Bachelor of Business Administration at SVKM's Narsee Monjee Institute of Management Studies (NMIMS)",
+      "url": null,
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "education",
+      "degree": "Bachelor of Business Administration",
+      "school": "SVKM's Narsee Monjee Institute of Management Studies (NMIMS)",
+      "location": "Mumbai"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "wjNGaIj41swXOk6Vfc7i",
+      "year": "2024",
+      "heading": "Brand Management: Strategies for a Strong Brand from Coursera Instructor Network",
+      "url": "https://www.coursera.org/account/accomplishments/records/9W9VEMBGSJZY",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "certification",
+      "name": "Brand Management: Strategies for a Strong Brand",
+      "organization": "Coursera Instructor Network"
+    },
+    {
+      "id": "BXzH335YXcr0ZIBvQVr2",
+      "year": "2024",
+      "heading": "Business Implications of AI from EIT DIGITAL",
+      "url": "https://www.coursera.org/account/accomplishments/records/6SRRGA3Y7XAR",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "certification",
+      "name": "Business Implications of AI",
+      "organization": "EIT DIGITAL"
+    },
+    {
+      "id": "Q4wvmDJyNRjPm9SNV58a",
+      "year": "2024",
+      "heading": "Get Started with Figma from Coursera Project Network",
+      "url": "https://www.coursera.org/account/accomplishments/records/U3SGD7N86YGJ",
+      "collaborators": [],
+      "description": "",
+      "attachments": [],
+      "type": "certification",
+      "name": "Get Started with Figma",
+      "organization": "Coursera Project Network"
+    }
+  ],
+  "contact": [
+    {
+      "id": "yzSsDaJrTbnA92OZeRNa",
+      "platform": "Linkedin",
+      "handle": "Rishabh Sharma",
+      "url": "http://www.linkedin.com/in/rishabh-sharma-6542052b1"
+    },
+    {
+      "id": "4YHopQjmrchCup8TAtjF",
+      "platform": "Instagram",
+      "handle": "r1shabh27",
+      "url": "https://instagram.com/r1shabh27"
+    },
+    {
+      "id": "c3og4nZrLvmMMYPn2UYm",
+      "platform": "Cosmos",
+      "handle": "r1shabh",
+      "url": "https://www.cosmos.so/r1shabh/(this-is)-real.life1"
+    },
+    {
+      "id": "CPGm1ZowwLDg8o6JN5MJ",
+      "platform": "Email",
+      "handle": "srishabh1105@gmail.com",
+      "url": "mailto:srishabh1105@gmail.com"
+    }
+  ],
+  "allCollections": [
+    {
+      "name": "Projects",
+      "items": [
+        {
+          "id": "tQc0zK2x05aqoPFaXRsZ",
+          "year": "2024",
+          "heading": "Logo Designer at Nebo",
+          "url": "https://www.instagram.com/nebofetehouse/",
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1000,
+              "height": 1000,
+              "url": "/content/media/Logo-Designer-at-Nebo-1.png"
+            },
+            {
+              "type": "image",
+              "width": 1904,
+              "height": 1370,
+              "url": "/content/media/Logo-Designer-at-Nebo-2.png"
+            },
+            {
+              "type": "image",
+              "width": 2422,
+              "height": 1372,
+              "url": "/content/media/Logo-Designer-at-Nebo-3.png"
+            },
+            {
+              "type": "image",
+              "width": 3600,
+              "height": 2400,
+              "url": "/content/media/Logo-Designer-at-Nebo-4.png"
+            }
+          ],
+          "type": "project",
+          "title": "Logo Designer",
+          "company": "Nebo"
+        },
+        {
+          "id": "hYCncRnYs7CwEJ9nFt5w",
+          "year": "2023",
+          "heading": "Pitch Deck Designer at Beardman Films",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 605,
+              "height": 743,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1918,
+              "height": 1079,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1920,
+              "height": 1080,
+              "url": "/content/media/Pitch-Deck-Designer-at-Beardman-Films-8.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Pitch Deck Designer",
+          "company": "Beardman Films"
+        },
+        {
+          "id": "vCzeZzJDVqHiVpC9jgsM",
+          "year": "2023",
+          "heading": "Social Media Designer at Hades Group",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1350,
+              "url": "/content/media/Social-Media-Designer-at-Hades-Group-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1920,
+              "url": "/content/media/Social-Media-Designer-at-Hades-Group-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1350,
+              "url": "/content/media/Social-Media-Designer-at-Hades-Group-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 3112,
+              "height": 4000,
+              "url": "/content/media/Social-Media-Designer-at-Hades-Group-4.jpg"
+            }
+          ],
+          "type": "project",
+          "title": "Social Media Designer",
+          "company": "Hades Group"
+        }
+      ]
+    },
+    {
+      "name": "Side Projects",
+      "items": [
+        {
+          "id": "HzxQIRlk1EaqdS0xp3D8",
+          "year": "Ongoing",
+          "heading": "Fun Stuff",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 564,
+              "height": 846,
+              "url": "/content/media/Fun-Stuff-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 768,
+              "height": 1000,
+              "url": "/content/media/Fun-Stuff-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 810,
+              "height": 1080,
+              "url": "/content/media/Fun-Stuff-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1156,
+              "height": 1542,
+              "url": "/content/media/Fun-Stuff-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1156,
+              "height": 1156,
+              "url": "/content/media/Fun-Stuff-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 940,
+              "height": 1671,
+              "url": "/content/media/Fun-Stuff-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1156,
+              "height": 1593,
+              "url": "/content/media/Fun-Stuff-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1136,
+              "height": 1671,
+              "url": "/content/media/Fun-Stuff-8.jpg"
+            }
+          ],
+          "type": "sideProject",
+          "title": "Fun Stuff",
+          "company": ""
+        },
+        {
+          "id": "ghSLQplGzuGYU6rE0sZx",
+          "year": "2025",
+          "heading": "Photography",
+          "url": "https://www.cosmos.so/r1shabh/(this-is)-real.life1",
+          "collaborators": [],
+          "description": "shot on iPhone",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 1448,
+              "height": 2172,
+              "url": "/content/media/Photography-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1500,
+              "height": 2000,
+              "url": "/content/media/Photography-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1448,
+              "height": 2172,
+              "url": "/content/media/Photography-3.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1536,
+              "height": 2048,
+              "url": "/content/media/Photography-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Photography-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1333,
+              "height": 2000,
+              "url": "/content/media/Photography-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2000,
+              "height": 1333,
+              "url": "/content/media/Photography-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1448,
+              "height": 2172,
+              "url": "/content/media/Photography-8.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1125,
+              "height": 2000,
+              "url": "/content/media/Photography-9.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1512,
+              "height": 2016,
+              "url": "/content/media/Photography-10.jpg"
+            }
+          ],
+          "type": "sideProject",
+          "title": "Photography",
+          "company": ""
+        },
+        {
+          "id": "c6yn6U9DXJflscpMRUOe",
+          "year": "2025",
+          "heading": "Club Posters",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 2060,
+              "height": 3659,
+              "url": "/content/media/Club-Posters-1.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2626,
+              "height": 3376,
+              "url": "/content/media/Club-Posters-2.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1920,
+              "url": "/content/media/Club-Posters-3.png"
+            },
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1920,
+              "url": "/content/media/Club-Posters-4.jpg"
+            },
+            {
+              "type": "image",
+              "width": 2475,
+              "height": 4400,
+              "url": "/content/media/Club-Posters-5.jpg"
+            },
+            {
+              "type": "image",
+              "width": 939,
+              "height": 1671,
+              "url": "/content/media/Club-Posters-6.jpg"
+            },
+            {
+              "type": "image",
+              "width": 940,
+              "height": 1671,
+              "url": "/content/media/Club-Posters-7.jpg"
+            },
+            {
+              "type": "image",
+              "width": 1080,
+              "height": 1920,
+              "url": "/content/media/Club-Posters-8.png"
+            }
+          ],
+          "type": "sideProject",
+          "title": "Club Posters",
+          "company": ""
+        }
+      ]
+    },
+    {
+      "name": "Work Experience",
+      "items": [
+        {
+          "id": "LtOKMdDD3Hvptckqrah0",
+          "year": "2023 — Now",
+          "heading": "Creative Director at T-rex Media",
+          "url": "https://www.trexmedia.in",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "workExperience",
+          "title": "Creative Director",
+          "company": "T-rex Media",
+          "location": "Mumbai"
+        }
+      ]
+    },
+    {
+      "name": "Volunteering",
+      "items": [
+        {
+          "id": "d0JcULJN3EI0NCepdA5I",
+          "year": "2024 — 2024",
+          "heading": "Bachpanshala",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [
+            {
+              "type": "image",
+              "width": 746,
+              "height": 995,
+              "url": "/content/media/Bachpanshala.jpg"
+            }
+          ],
+          "type": "volunteering",
+          "title": "",
+          "organization": "Bachpanshala",
+          "location": "Gurgaon"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "items": [
+        {
+          "id": "yQOgri1ci84Y6KBQnw7I",
+          "year": "2023 — Now",
+          "heading": "Bachelor of Business Administration at SVKM's Narsee Monjee Institute of Management Studies (NMIMS)",
+          "url": null,
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "education",
+          "degree": "Bachelor of Business Administration",
+          "school": "SVKM's Narsee Monjee Institute of Management Studies (NMIMS)",
+          "location": "Mumbai"
+        }
+      ]
+    },
+    {
+      "name": "Certifications",
+      "items": [
+        {
+          "id": "wjNGaIj41swXOk6Vfc7i",
+          "year": "2024",
+          "heading": "Brand Management: Strategies for a Strong Brand from Coursera Instructor Network",
+          "url": "https://www.coursera.org/account/accomplishments/records/9W9VEMBGSJZY",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "certification",
+          "name": "Brand Management: Strategies for a Strong Brand",
+          "organization": "Coursera Instructor Network"
+        },
+        {
+          "id": "BXzH335YXcr0ZIBvQVr2",
+          "year": "2024",
+          "heading": "Business Implications of AI from EIT DIGITAL",
+          "url": "https://www.coursera.org/account/accomplishments/records/6SRRGA3Y7XAR",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "certification",
+          "name": "Business Implications of AI",
+          "organization": "EIT DIGITAL"
+        },
+        {
+          "id": "Q4wvmDJyNRjPm9SNV58a",
+          "year": "2024",
+          "heading": "Get Started with Figma from Coursera Project Network",
+          "url": "https://www.coursera.org/account/accomplishments/records/U3SGD7N86YGJ",
+          "collaborators": [],
+          "description": "",
+          "attachments": [],
+          "type": "certification",
+          "name": "Get Started with Figma",
+          "organization": "Coursera Project Network"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "items": [
+        {
+          "id": "yzSsDaJrTbnA92OZeRNa",
+          "platform": "Linkedin",
+          "handle": "Rishabh Sharma",
+          "url": "http://www.linkedin.com/in/rishabh-sharma-6542052b1"
+        },
+        {
+          "id": "4YHopQjmrchCup8TAtjF",
+          "platform": "Instagram",
+          "handle": "r1shabh27",
+          "url": "https://instagram.com/r1shabh27"
+        },
+        {
+          "id": "c3og4nZrLvmMMYPn2UYm",
+          "platform": "Cosmos",
+          "handle": "r1shabh",
+          "url": "https://www.cosmos.so/r1shabh/(this-is)-real.life1"
+        },
+        {
+          "id": "CPGm1ZowwLDg8o6JN5MJ",
+          "platform": "Email",
+          "handle": "srishabh1105@gmail.com",
+          "url": "mailto:srishabh1105@gmail.com"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+.windows {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.windowWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: all;
+  min-width: 220px;
+  min-height: 180px;
+}
+
+.window {
+  position: absolute;
+  overflow: hidden;
+  inset: 6px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.window[data-type="status"] {
+  border-radius: 0;
+}
+
+.windowWrap:focus-within .window {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 18px 36px rgba(0, 0, 0, 0.45);
+}
+
+.windowHeader {
+  background-color: #e4e4e4;
+  height: 40px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 10;
+  cursor: default;
+}
+
+.windowWrap:focus-within .window .windowHeader {
+  background-color: #f0f0f0;
+}
+
+.window[data-type="experience"] .windowHeader,
+.window[data-type="about"] .windowHeader {
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.window[data-type="soundtrack"] .windowHeader {
+  display: none;
+}
+
+.window[data-type="soundtrack"] .trafficLights button:nth-child(1),
+.windowWrap:focus-within .window[data-type="soundtrack"] .trafficLights button:nth-child(1) {
+  background-color: rgba(117, 117, 117, 0.5);
+  backdrop-filter: blur(5px) saturate(3);
+  width: 16px;
+  height: 16px;
+  border: none;
+}
+
+.windowWrap:focus-within .window[data-type="soundtrack"] .trafficLights button:nth-child(1):active {
+  background-color: rgba(117, 117, 117, 0.75);
+}
+
+.window[data-type="experience"][data-scrolled="true"] .windowHeader {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.window[data-type="status"] .windowHeader,
+.windowWrap:focus-within .window[data-type="status"] .windowHeader{
+  height: 16px;
+  padding: 0 4px;
+  background-color: rgb(251, 235, 97);
+  box-shadow: none;
+}
+
+.window[data-type="status"] .trafficLights button {
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+  background-color: rgb(253, 244, 167) !important;
+  border: 1px solid rgb(216, 197, 66) !important;
+}
+
+.window[data-type="status"] .trafficLights button svg {
+  display: none !important;
+}
+
+.window[data-type="status"] .trafficLights button:active {
+  background-color: rgb(216, 197, 66) !important;
+}
+
+.window[data-type="status"] .trafficLights button:nth-child(2),
+.window[data-type="status"] .trafficLights button:nth-child(3),
+.window[data-type="status"] .title {
+  display: none !important;
+}
+
+.trafficLights {
+  display: flex;
+  column-gap: 8px;
+}
+
+.trafficLights button {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #ccc;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.trafficLights button svg {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -6px;
+  margin-top: -6px;
+  display: none;
+}
+
+.trafficLights:hover button svg {
+  display: block;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(1),
+.trafficLights:hover button:nth-child(1) {
+  background-color: #ff6159;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(1):active,
+.trafficLights:hover button:nth-child(1):active {
+  background-color: #bf4942;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(2),
+.trafficLights:hover button:nth-child(2) {
+  background-color: #ffbd2e;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(2):active,
+.trafficLights:hover button:nth-child(2):active{
+  background-color: #bf8e22;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(3),
+.trafficLights:hover button:nth-child(3){
+  background-color: #28c941;
+}
+
+.windowWrap:focus-within .window .trafficLights button:nth-child(3):active,
+.trafficLights:hover button:nth-child(3):active {
+  background-color: #1d9730;
+}
+
+.title {
+  position: absolute;
+  left: 84px;
+  right: 84px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+  color: #999;
+}
+
+.windowWrap:focus-within .window .title {
+  color: #111;
+}
+
+.windowContent {
+  flex: 1;
+  background-color: #fff;
+  overflow: scroll;
+  scrollbar-width: 0;
+  overflow-anchor: none;
+}
+
+.windowContent::-webkit-scrollbar {
+  display: none;
+}
+
+.dragHandle {
+  position: absolute;
+  z-index: 2;
+}
+
+.dragHandle.n,
+.dragHandle.s {
+  height: 12px;
+  left: 12px;
+  right: 12px;
+  cursor: ns-resize;
+}
+
+.dragHandle.n {
+  top: 0;
+}
+
+.dragHandle.s {
+  bottom: 0;
+}
+
+.dragHandle.e,
+.dragHandle.w {
+  width: 12px;
+  top: 12px;
+  bottom: 12px;
+  cursor: ew-resize;
+}
+
+.dragHandle.e {
+  right: 0;
+}
+
+.dragHandle.w {
+  left: 0;
+}
+
+.dragHandle.nw,
+.dragHandle.ne,
+.dragHandle.sw,
+.dragHandle.se {
+  width: 12px;
+  height: 12px;
+}
+
+.dragHandle.nw {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+
+.dragHandle.ne {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+
+.dragHandle.sw {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+
+.dragHandle.se {
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}

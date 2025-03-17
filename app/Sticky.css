@@ -1,0 +1,15 @@
+.sticky {
+  padding: 16px 20px;
+  background-color: rgb(252, 244, 167);
+  min-height: 100%;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.sticky a {
+  color: inherit;
+}
+
+.sticky p {
+  margin-bottom: calc((13.5px * 1.6) / 2);
+}

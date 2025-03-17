@@ -1,0 +1,92 @@
+.fileHeader {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: 25px;
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  padding: 0 16px;
+  column-gap: 16px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.fileHeader div {
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.fileList li {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  column-gap: 16px;
+  align-items: center;
+  font-weight: 400;
+  height: 24px;
+  align-items: center;
+  padding: 0 16px;
+  font-variant-numeric: tabular-nums;
+  cursor: default;
+}
+
+.fileList li:nth-child(even) {
+  background-color: #F4F5F5;
+}
+
+.fileList li.focused {
+  background-color: #dcdcdc;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.name span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fileIcon {
+  width: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.fileIcon img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.year {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--secondary-color);
+}
+
+.windowWrap:focus-within .fileList li.focused {
+  background-color: var(--highlight-color);
+  color: #fff;
+}
+
+.windowWrap:focus-within .fileList li.focused .year {
+  color: rgba(255, 255, 255, 0.75);
+}

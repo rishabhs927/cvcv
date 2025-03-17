@@ -1,0 +1,106 @@
+.soundtrack {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #000;
+  cursor: default;
+}
+
+.soundtrack img {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  position: absolute;
+  inset: -1px;
+  object-fit: cover;
+}
+
+.controls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.playerButton {
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px) saturate(3) opacity(1);
+  -webkit-backdrop-filter: blur(10px) saturate(3) opacity(1);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+}
+
+.soundtrack[data-theme="dark"] .playerButton {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+@media (hover: hover) {
+  .playerButton {
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px) saturate(3) opacity(0);
+    -webkit-backdrop-filter: blur(10px) saturate(3) opacity(0);
+    transition: all 0.2s ease;
+  }
+  
+  .soundtrack[data-theme="dark"] .playerButton {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .soundtrack:hover .playerButton,
+  .soundtrack[data-paused="true"] .playerButton {
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px) saturate(3) opacity(1);
+    -webkit-backdrop-filter: blur(10px) saturate(3) opacity(1);
+  }
+
+  .soundtrack[data-theme="dark"]:hover .playerButton,
+  .soundtrack[data-theme="dark"][data-paused="true"] .playerButton {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+  
+  .playerButton svg {
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  
+  .soundtrack:hover .playerButton svg,
+  .soundtrack[data-paused="true"] .playerButton  svg {
+    opacity: 1;
+  }
+}
+
+.playerButton:active {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.soundtrack[data-theme="dark"] .playerButton:active {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.progress {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.closeSoundtrack {
+  left: calc(50% + 4px);
+  bottom: 12px;
+}
+
+.playToggle {
+  left: calc(50% - 28px);
+  bottom: 12px;
+}
+
+.audio {
+  display: none;
+}

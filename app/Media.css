@@ -1,0 +1,14 @@
+.fullScreenMedia {
+  width: 100%;
+  position: relative;
+  background-color: #888;
+  height: 100%;
+}
+
+.fullScreenMedia img,
+.fullScreenMedia video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

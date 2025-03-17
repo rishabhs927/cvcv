@@ -1,0 +1,82 @@
+.note {
+  padding: clamp(24px, calc((100% - 540px) / 2), 72px) 24px;
+  font-family: 'iA Writer Mono', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.note h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.noteContent {
+  max-width: 540px;
+  margin: 0 auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.note p:not(:last-child),
+.note ul:not(:last-child), 
+.note ol:not(:last-child) {
+  margin-bottom: calc(16px * 1.6);
+}
+
+.note li {
+  margin-bottom: calc((16px * 1.6) / 2);
+}
+
+.note ul li {
+  list-style-type: disc;
+}
+
+.note ol li {
+  list-style-type: decimal;
+}
+
+.note a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.noteAttachments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.media {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.media img,
+.media video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: inherit;
+}
+
+.media:focus-within::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+}
