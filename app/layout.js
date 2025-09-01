@@ -11,6 +11,9 @@ import "./Window.css";
 export const metadata = {
   title: "About- Rishabh Sharma",
   description: "",
+  icons: {
+    icon: '/content/media/banner.JPEG',
+  },
 };
 
 export default function RootLayout({ children }) {

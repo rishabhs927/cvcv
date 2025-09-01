@@ -88,6 +88,11 @@ const mediaFiles = {
   },
   "soundtrack.mp3": {
     "url": "/mediaManager/soundtrack.mp3"
+  },
+  "soundcloud.png": {
+    "url": "/mediaManager/soundcloud.png",
+    "width": 736,
+    "height": 715
   }
 };
 mediaFiles[''] = { url: '' };

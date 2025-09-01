@@ -1,0 +1,187 @@
+.soundcloud {
+  padding: 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100%;
+  font-family: inherit;
+}
+
+.soundcloudContent {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.soundcloudHeader {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.soundcloudLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.soundcloudLogo h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.soundcloudConnect {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.soundcloudConnect > p {
+  color: #64748b;
+  margin: 0;
+  font-size: 16px;
+}
+
+.connectSection {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.connectSection h3 {
+  margin: 0 0 12px 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.connectSection p {
+  margin: 0 0 16px 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.connectSection ul {
+  margin: 0 0 20px 0;
+  padding-left: 20px;
+  color: #64748b;
+}
+
+.connectSection li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.connectButton {
+  background: linear-gradient(135deg, #FF5500 0%, #FF7700 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 85, 0, 0.3);
+}
+
+.connectButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #FF7700 0%, #FF9900 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 85, 0, 0.4);
+}
+
+.connectButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.apiInfo {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.apiInfo h3 {
+  margin: 0 0 12px 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.apiInfo p {
+  margin: 0 0 16px 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.apiInfo ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #64748b;
+}
+
+.apiInfo li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.apiInfo a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.apiInfo a:hover {
+  text-decoration: underline;
+}
+
+.soundcloudConnected {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.soundcloudConnected h3 {
+  margin: 0 0 20px 0;
+  color: #059669;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tracksList h4 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trackItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.trackItem:last-child {
+  border-bottom: none;
+}
+
+.trackItem span:first-child {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.trackItem span:last-child {
+  color: #64748b;
+  font-size: 14px;
+}

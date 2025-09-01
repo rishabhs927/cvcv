@@ -10,6 +10,16 @@ import '@fontsource/ia-writer-mono/400-italic.css';
 import '@fontsource/ia-writer-mono/700-italic.css';
 
 import cv from './cv';
+import './Styles.css';
+import './Desktop.css';
+import './Window.css';
+import './About.css';
+import './Folder.css';
+import './Note.css';
+import './Media.css';
+import './Player.css';
+import './Sticky.css';
+import './SoundCloud.css';
 
 function App() {
   return (
@@ -70,6 +80,87 @@ function About(props) {
 }
 
 
+function SoundCloud(props) {
+  const [isConnected, setIsConnected] = useState(false);
+  const [tracks, setTracks] = useState([]);
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const handleConnect = () => {
+    setIsConnecting(true);
+    // Simulate API connection for demo
+    setTimeout(() => {
+      setIsConnected(true);
+      setIsConnecting(false);
+      setTracks([
+        { title: "Sample Track 1", plays: "1.2K" },
+        { title: "Sample Track 2", plays: "856" },
+        { title: "Sample Track 3", plays: "2.1K" }
+      ]);
+    }, 2000);
+  };
+
+  return (
+    <div className="soundcloud">
+      <div className="soundcloudContent">
+        <div className="soundcloudHeader">
+          <div className="soundcloudLogo">
+            <img src={cv.media("soundcloud.png").url} width="32" height="32" alt="SoundCloud"/>
+            <h2>SoundCloud</h2>
+          </div>
+        </div>
+        
+        {!isConnected ? (
+          <div className="soundcloudConnect">
+            <p>Connect your SoundCloud account to showcase your music and tracks.</p>
+            
+            <div className="connectSection">
+              <h3>What you can do:</h3>
+              <ul>
+                <li>Display your latest tracks</li>
+                <li>Show play counts and engagement</li>
+                <li>Share your music portfolio</li>
+                <li>Auto-sync with your SoundCloud profile</li>
+              </ul>
+              <button 
+                className="connectButton" 
+                onClick={handleConnect}
+                disabled={isConnecting}
+              >
+                {isConnecting ? "Connecting..." : "Connect SoundCloud"}
+              </button>
+            </div>
+            
+            <div className="apiInfo">
+              <h3>For Developers</h3>
+              <p>To fully integrate SoundCloud functionality:</p>
+              <ol>
+                <li>Register your app at <a href="https://developers.soundcloud.com" target="_blank">developers.soundcloud.com</a></li>
+                <li>Obtain your client_id and client_secret</li>
+                <li>Implement OAuth 2.1 authentication</li>
+                <li>Use the SoundCloud API to fetch user data</li>
+              </ol>
+            </div>
+          </div>
+        ) : (
+          <div className="soundcloudConnected">
+            <h3>✓ Connected to SoundCloud</h3>
+            <div className="tracksList">
+              <h4>Recent Tracks</h4>
+              {tracks.map((track, index) => (
+                <div key={index} className="trackItem">
+                  <span>{track.title}</span>
+                  <span>{track.plays} plays</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+
 function Desktop(props) {
   const [windows, setWindows] = useState([]);
   const [windowOrder, setWindowOrder] = useState([]);
@@ -118,27 +209,7 @@ function Desktop(props) {
             });
           }}
         />
-        {cv.allCollections.map((collection, index) => {
-          if (collection.name === "Contact") { return }
-          return (
-            <Icon
-              open={() => {
-                if (windows.some(e => e.collection === collection)) { 
-                  let index = windows.findIndex(e => e.collection === collection);
-                  handleFocus(index);
-                  return
-                }
-                addWindow({
-                  type: "folder",
-                  name: collection.name,
-                  collection: collection
-                });
-              }}
-              icon={<img src={cv.media("folder.png")} draggable={false}/>}
-              collection={collection}
-              key={collection.name}/>
-          )
-        })}
+
         {cv.general.status && cv.general.status.text ?
           <Icon
             open={() => {
@@ -181,6 +252,24 @@ function Desktop(props) {
             }}
           />
         : null}
+        <Icon
+          open={() => {
+            if (windows.some(e => e.type === "soundcloud")) {
+              let index = windows.findIndex(e => e.type === "soundcloud");
+              handleFocus(index);
+              return 
+            }
+            addWindow({
+              type: "soundcloud",
+              name: "SoundCloud",
+              id: "soundcloud"
+            });
+          }}
+          icon={<img src={cv.media("soundcloud.png").url} draggable={false}/>}
+          collection={{
+            name: "SoundCloud"
+          }}
+        />
       </div>
       {windows.length > 0 ?
         <div className="windows">
@@ -212,6 +301,9 @@ function Desktop(props) {
             } else if (item.type === "soundtrack") {
               content = <Player close={() => handleRemove(index)}/>
               size = { width: 220, height: 220 }
+            } else if (item.type === "soundcloud") {
+              content = <SoundCloud/>
+              size = { width: Math.min(540, maxWidth), height: 480 }
             }
             return (
               <Window
@@ -238,7 +330,7 @@ function Icon(props) {
   return (
     <div
       onDoubleClick={props.open}
-      tabindex={0}
+      tabIndex={0}
       className="desktopItem">
       <div className="icon">
         {props.icon ? props.icon : null}
@@ -348,7 +440,7 @@ function Attachments(props) {
       
         return (
           <div
-            tabindex={0}
+            tabIndex={0}
             class="media"
             style={{
               aspectRatio: media.width / media.height,
@@ -575,7 +667,7 @@ function Toolbar(props) {
   
   return (
     <div className="toolbar" data-theme={siteSettings.toolbarColor}>
-      <h1>{cv.general.displayName}</h1>
+      <h1 title="Copyright 2025 all rights reserved">{cv.general.displayName}©</h1>
       <div style={{ marginLeft: 'auto' }}>
         <div>{formatTime(time)}</div>
       </div>
@@ -687,7 +779,7 @@ function Window(props) {
         top: -6,
       }}
       dragElastic={0}
-      tabindex={0}
+      tabIndex={0}
       preventScroll={true}
       ref={windowRef}
       onFocus={() => props.focus()}
