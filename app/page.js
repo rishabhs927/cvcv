@@ -10,6 +10,7 @@ import '@fontsource/ia-writer-mono/400-italic.css';
 import '@fontsource/ia-writer-mono/700-italic.css';
 
 import cv from './cv';
+import Flipbook from './Flipbook';
 import './Styles.css';
 import './Desktop.css';
 import './Window.css';
@@ -20,6 +21,7 @@ import './Media.css';
 import './Player.css';
 import './Sticky.css';
 import './SoundCloud.css';
+import './Flipbook.css';
 
 function App() {
   return (
@@ -270,6 +272,35 @@ function Desktop(props) {
             name: "SoundCloud"
           }}
         />
+        <Icon
+          open={() => {
+            if (windows.some(e => e.type === "flipbook")) {
+              let index = windows.findIndex(e => e.type === "flipbook");
+              handleFocus(index);
+              return 
+            }
+            addWindow({
+              type: "flipbook",
+              name: "Flipbook",
+              id: "flipbook"
+            });
+          }}
+          icon={<div style={{
+            width: 32,
+            height: 32,
+            background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4)',
+            borderRadius: 4,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            color: 'white'
+          }}>📖</div>}
+          collection={{
+            name: "Flipbook"
+          }}
+        />
       </div>
       {windows.length > 0 ?
         <div className="windows">
@@ -304,6 +335,9 @@ function Desktop(props) {
             } else if (item.type === "soundcloud") {
               content = <SoundCloud/>
               size = { width: Math.min(540, maxWidth), height: 480 }
+            } else if (item.type === "flipbook") {
+              content = <div className="flipbook-container"><Flipbook/></div>
+              size = { width: Math.min(800, maxWidth), height: 600 }
             }
             return (
               <Window
