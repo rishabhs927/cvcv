@@ -10,7 +10,7 @@ const flipbookData = {
   "general": {
     "profilePhoto": "/content/flipbook/media/profilePhoto.jpg",
     "username": "r1sh",
-    "displayName": "काम",
+    "displayName": "/content/flipbook/media/kaam.jpg",
     "profession": null,
     "location": "Mumbai, India",
     "pronouns": "He/Him",
@@ -127,7 +127,7 @@ const flipbookData = {
     {
       "id": "vCzeZzJDVqHiVpC9jgsM",
       "year": "2023",
-      "heading": "Event Posters",
+      "heading": "Social Media",
       "url": null,
       "collaborators": [],
       "description": "",
@@ -158,7 +158,7 @@ const flipbookData = {
         }
       ],
       "type": "project",
-      "title": "Event Posters",
+      "title": "Social Media",
       "company": ""
     }
   ],
@@ -466,47 +466,97 @@ function Flipbook() {
       {isDesktop === true && allColorsReady && (
         <div style={{
           position: 'fixed',
-          bottom: 20,
-          left: '50%',
-          transform: 'translateX(-50%)',
+          right: 30,
+          top: '50%',
+          transform: 'translateY(-50%)',
           display: 'flex',
-          gap: 10,
+          flexDirection: 'column',
+          gap: 15,
           zIndex: 1000
         }}>
-          <button 
+          {/* Up/Previous Button */}
+          <motion.button 
             onClick={() => setCurrent(Math.max(0, current - 1))}
+            disabled={current === 0}
+            whileHover={{ scale: current > 0 ? 1.1 : 1, y: current > 0 ? -2 : 0 }}
+            whileTap={{ scale: current > 0 ? 0.95 : 1 }}
             style={{
-              padding: '8px 16px',
-              background: 'rgba(255,255,255,0.9)',
-              border: 'none',
-              borderRadius: 20,
+              width: 50,
+              height: 50,
+              background: current > 0 
+                ? 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,240,240,0.9))' 
+                : 'rgba(255,255,255,0.3)',
+              border: current > 0 ? '2px solid rgba(0,0,0,0.1)' : '2px solid rgba(255,255,255,0.2)',
+              borderRadius: '50%',
               cursor: current > 0 ? 'pointer' : 'not-allowed',
-              opacity: current > 0 ? 1 : 0.5
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '20px',
+              color: current > 0 ? '#333' : 'rgba(255,255,255,0.5)',
+              boxShadow: current > 0 
+                ? '0 4px 15px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1)' 
+                : 'none',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)'
             }}
           >
-            ← Previous
-          </button>
-          <span style={{
-            padding: '8px 16px',
-            background: 'rgba(255,255,255,0.9)',
-            borderRadius: 20,
-            fontSize: '14px'
-          }}>
-            {current} / {projects.length}
-          </span>
-          <button 
-            onClick={() => setCurrent(Math.min(projects.length, current + 1))}
+            ↑
+          </motion.button>
+
+          {/* Page Counter */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             style={{
-              padding: '8px 16px',
-              background: 'rgba(255,255,255,0.9)',
-              border: 'none',
-              borderRadius: 20,
-              cursor: current < projects.length ? 'pointer' : 'not-allowed',
-              opacity: current < projects.length ? 1 : 0.5
+              padding: '8px 12px',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,240,240,0.9))',
+              border: '2px solid rgba(0,0,0,0.1)',
+              borderRadius: 25,
+              fontSize: '12px',
+              fontWeight: '600',
+              color: '#333',
+              textAlign: 'center',
+              minWidth: 50,
+              boxShadow: '0 4px 15px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)'
             }}
           >
-            Next →
-          </button>
+            {current}/{projects.length}
+          </motion.div>
+
+          {/* Down/Next Button */}
+          <motion.button 
+            onClick={() => setCurrent(Math.min(projects.length, current + 1))}
+            disabled={current >= projects.length}
+            whileHover={{ scale: current < projects.length ? 1.1 : 1, y: current < projects.length ? 2 : 0 }}
+            whileTap={{ scale: current < projects.length ? 0.95 : 1 }}
+            style={{
+              width: 50,
+              height: 50,
+              background: current < projects.length 
+                ? 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,240,240,0.9))' 
+                : 'rgba(255,255,255,0.3)',
+              border: current < projects.length ? '2px solid rgba(0,0,0,0.1)' : '2px solid rgba(255,255,255,0.2)',
+              borderRadius: '50%',
+              cursor: current < projects.length ? 'pointer' : 'not-allowed',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '20px',
+              color: current < projects.length ? '#333' : 'rgba(255,255,255,0.5)',
+              boxShadow: current < projects.length 
+                ? '0 4px 15px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1)' 
+                : 'none',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)'
+            }}
+          >
+            ↓
+          </motion.button>
         </div>
       )}
       {isDesktop === true && <Footer cv={flipbookData} />}
@@ -930,20 +980,6 @@ const [showBottomFade, setShowBottomFade] = useState(false);
      
       }}
     >
-      <div
-        className="anton"
-        style={{
-          width: "100%",
-          position: "absolute",
-          top: 0,
-          padding: 10,
-          color: textColor,
-          textAlign: "center",
-          fontSize: isDesktop === true? '1em': '0.8em'
-        }}
-      >
-        {cv.general.displayName}
-      </div>
 
       <div
         style={{
@@ -1246,17 +1282,30 @@ function PaperHeader({ cv }) {
           >
             {cv.general.byline && <p style={{zIndex:4}}>{cv.general.byline}</p>}
 
-            <h1
-              className="anton"
-              style={{
-                fontSize: "10vw",
-                width: "fit-content",
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {cv.general.displayName}
-            </h1>
+            {cv.general.displayName.startsWith('/') ? (
+              <img 
+                src={cv.general.displayName}
+                alt="Logo"
+                style={{
+                  height: "10vw",
+                  width: "auto",
+                  maxWidth: "100%",
+                  objectFit: "contain"
+                }}
+              />
+            ) : (
+              <h1
+                className="anton"
+                style={{
+                  fontSize: "10vw",
+                  width: "fit-content",
+                  lineHeight: 1,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {cv.general.displayName}
+              </h1>
+            )}
             {isDesktop === false && isScrollable === true && (
               <motion.div
                 style={{
