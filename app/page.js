@@ -174,6 +174,15 @@ function Desktop(props) {
         : null}
         <Icon
           open={() => {
+            window.open("https://soundcloud.com/r1shabh27", "_blank");
+          }}
+          icon={<img src={cv.media("soundcloud.png")} draggable={false}/>}
+          collection={{
+            name: "SoundCloud"
+          }}
+        />
+        <Icon
+          open={() => {
             if (windows.some(e => e.type === "flipbook")) {
               let index = windows.findIndex(e => e.type === "flipbook");
               handleFocus(index);
