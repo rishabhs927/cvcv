@@ -1115,34 +1115,29 @@ const [showBottomFade, setShowBottomFade] = useState(false);
         </div>
       </motion.div>
 
-     {allColorsReady && scrollRef.current && (
+     {allColorsReady && scrollRef.current && isDesktop && (
         <>
           <motion.div
-            animate={{ opacity: isDesktop ? (showLeftFade ? 1 : 0) : (showTopFade ? 1 : 0) }}
+            animate={{ opacity: showLeftFade ? 1 : 0 }}
             style={{
-              width: isDesktop ? "10vw" : `calc(100% - 40px)`,
-              height: isDesktop ? `calc(100% - ${paletteSize + 10}px)` : "5vh",
-              top: isDesktop ? 0 : `calc(${scrollRef.current.getBoundingClientRect().top}px - ${mobilePaperPadding} - 1px)`,
+              width: "10vw",
+              height: `calc(100% - ${paletteSize + 10}px)`,
+              top: 0,
               position: "absolute",
               left: 20,
-              background: isDesktop
-                ? `linear-gradient(270deg, transparent, ${color})`
-                : `linear-gradient(180deg, ${color}, transparent)`,
+              background: `linear-gradient(270deg, transparent, ${color})`,
               pointerEvents: "none",
             }}
           />
           <motion.div
-            animate={{ opacity: isDesktop ? (showRightFade ? 1 : 0) : (showBottomFade ? 1 : 0) }}
+            animate={{ opacity: showRightFade ? 1 : 0 }}
             style={{
-              width: isDesktop ? "10vw" : `calc(100% - 40px)`,
-              height: isDesktop ? `calc(100% - ${paletteSize + 10}px)` : "5vh",
-              top: isDesktop ? 0 : undefined,
-              bottom: isDesktop ? undefined : 20 -1,
+              width: "10vw",
+              height: `calc(100% - ${paletteSize + 10}px)`,
+              top: 0,
               position: "absolute",
               right: 20,
-              background: isDesktop
-                ? `linear-gradient(90deg, transparent, ${color})`
-                : `linear-gradient(180deg, transparent, ${color})`,
+              background: `linear-gradient(90deg, transparent, ${color})`,
               pointerEvents: "none",
             }}
           />
