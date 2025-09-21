@@ -66,7 +66,7 @@ const flipbookData = {
     {
       "id": "hYCncRnYs7CwEJ9nFt5w",
       "year": "2023",
-      "heading": "Branding (bizzcards and pitch decks)",
+      "heading": "Pitchdeck for Amazon Prime",
       "url": null,
       "collaborators": [],
       "description": "",
@@ -159,53 +159,6 @@ const flipbookData = {
       ],
       "type": "project",
       "title": "Business Cards Design",
-      "company": ""
-    },
-    {
-      "id": "pitch-decks-section",
-      "year": "2023-2024",
-      "heading": "Pitch Decks & Presentations",
-      "url": null,
-      "collaborators": [],
-      "description": "Creative pitch deck designs for startups and business presentations",
-      "attachments": [
-        {
-          "type": "image",
-          "width": 1920,
-          "height": 1080,
-          "url": "/content/flipbookdata/PitchDecks/FREE_The-Urbans-Night-Billboards-Mockup-Series_01.png"
-        },
-        {
-          "type": "pdf",
-          "width": 1920,
-          "height": 1080,
-          "url": "/content/flipbookdata/PitchDecks/Rage Final-compressed.pdf",
-          "title": "Rage Final Pitch Deck"
-        },
-        {
-          "type": "pdf",
-          "width": 1920,
-          "height": 1080,
-          "url": "/content/flipbookdata/PitchDecks/Aatma-NirbharDeck.pdf",
-          "title": "Aatma Nirbhar Pitch Deck"
-        },
-        {
-          "type": "pdf",
-          "width": 1920,
-          "height": 1080,
-          "url": "/content/flipbookdata/PitchDecks/DIVSOMALLPDeck.pdf",
-          "title": "Divsoma Pitch Deck"
-        },
-        {
-          "type": "pdf",
-          "width": 1920,
-          "height": 1080,
-          "url": "/content/flipbookdata/PitchDecks/Tropikulture_ Cultural Collective.pdf",
-          "title": "Tropikulture Cultural Collective"
-        }
-      ],
-      "type": "project",
-      "title": "Pitch Decks & Presentations",
       "company": ""
     },
     {

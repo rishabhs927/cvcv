@@ -232,7 +232,7 @@ function Desktop(props) {
               size = { width: 220, height: 220 }
             } else if (item.type === "flipbook") {
               content = <div className="flipbook-container"><Flipbook/></div>
-              size = { width: Math.min(800, maxWidth), height: 600 }
+              size = { width: Math.min(1500, maxWidth), height: 1100 }
             }
             return (
               <Window
