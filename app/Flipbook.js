@@ -5,6 +5,16 @@ import { combineCollections, RichText } from 'readcv';
 import { motion, useSpring, useTransform, useAnimate, AnimatePresence } from 'framer-motion';
 import {useSwipeable} from 'react-swipeable'
 
+// Function to shuffle array randomly
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 // Import flipbook data
 const flipbookData = {
   "general": {
@@ -136,12 +146,6 @@ const flipbookData = {
           "type": "image",
           "width": 1920,
           "height": 1080,
-          "url": "/content/flipbookdata/buisness cards/bizzcard_divsoma.png"
-        },
-        {
-          "type": "image",
-          "width": 1920,
-          "height": 1080,
           "url": "/content/flipbookdata/buisness cards/bizzcard_kalratri.png"
         },
         {
@@ -168,7 +172,7 @@ const flipbookData = {
       "url": null,
       "collaborators": [],
       "description": "",
-      "attachments": [
+      "attachments": shuffleArray([
         {
           "type": "image",
           "width": 1080,
@@ -211,7 +215,7 @@ const flipbookData = {
           "height": 1080,
           "url": "/content/flipbookdata/social_media/3.png"
         }
-      ],
+      ]),
       "type": "project",
       "title": "Social Media",
       "company": ""
@@ -359,7 +363,7 @@ const flipbookData = {
       "url": null,
       "collaborators": [],
       "description": "",
-      "attachments": [
+      "attachments": shuffleArray([
         {
           "type": "image",
           "width": 2060,
@@ -438,7 +442,7 @@ const flipbookData = {
           "height": 1080,
           "url": "/content/flipbookdata/club_posters/thalassa (1).png"
         }
-      ],
+      ]),
       "type": "sideProject",
       "title": "Event Posters",
       "company": ""
