@@ -15,6 +15,16 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
+// Preload images for faster subsequent loads
+const preloadImage = (src) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = src;
+  });
+};
+
 // Import flipbook data
 const flipbookData = {
   "general": {
@@ -158,7 +168,7 @@ const flipbookData = {
           "type": "image",
           "width": 1920,
           "height": 1080,
-          "url": "/content/flipbookdata/buisness cards/WhatsApp Image 2025-03-20 at 13.23.19.jpeg"
+          "url": "/content/flipbookdata/buisness cards/222.png"
         }
       ],
       "type": "project",
@@ -530,13 +540,16 @@ function Flipbook() {
     ...config,
   });
 
- const projects = combineCollections(
-    flipbookData.projects,
-    flipbookData.workExperience,
-    flipbookData.sideProjects,
-  ).filter((x) => x.attachments.length > 0);
+  const projects = useMemo(() => 
+    combineCollections(
+      flipbookData.projects,
+      flipbookData.workExperience,
+      flipbookData.sideProjects,
+    ).filter((x) => x.attachments.length > 0),
+    [] // Empty dependency array since flipbookData is static
+  );
 
- const [allColorsReady, setAllColorsReady] = useState(false);
+  const [allColorsReady, setAllColorsReady] = useState(true); // Start as ready for faster initial load
   
   return (
     <div style={{ 
@@ -551,12 +564,7 @@ function Flipbook() {
       overflowX: 'hidden',
       position: 'relative'
     }} {...handlers}>
-      {/* Loading Spinner */}
-      <AnimatePresence>
-        {!allColorsReady && (
-          <LoadingSpinner />
-        )}
-      </AnimatePresence>
+      {/* Loading Spinner removed for faster initial load */}
       
       <ColorPapers swipe={swipe} setSwipe={setSwipe} current={current} setCurrent={setCurrent} projects={projects} allColorsReady={allColorsReady} setAllColorsReady={setAllColorsReady} cv={flipbookData}/>
       {isDesktop === true && allColorsReady && (
@@ -671,17 +679,38 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
   const colorReadyCount = useRef(0);
 
   useEffect(() => {
+    // Batch process all attachments at once for better performance
+    const allAttachments = [];
     projects.forEach((project) => {
       let link = project.url;
       project.attachments.forEach((attachment) => {
-        let newAttachment = attachment;
+        let newAttachment = { ...attachment };
         if (link) {
           newAttachment.link = link;
         }
-        setAttachments((attachments) => [...attachments, newAttachment]);
+        allAttachments.push(newAttachment);
       });
     });
-  }, []);
+    setAttachments(allAttachments);
+
+    // Preload first few images for faster navigation
+    const preloadFirstImages = async () => {
+      const firstProjects = projects.slice(0, 3); // Preload first 3 projects
+      const preloadPromises = firstProjects.map(project => 
+        project.attachments.slice(0, 2).map(attachment => { // First 2 images per project
+          if (attachment.type === 'image') {
+            return preloadImage(attachment.url).catch(() => null); // Ignore errors
+          }
+          return Promise.resolve();
+        })
+      ).flat();
+      
+      await Promise.all(preloadPromises);
+    };
+
+    // Start preloading after a small delay to not block initial render
+    setTimeout(preloadFirstImages, 200);
+  }, [projects]);
 
   const handleSwipe = async () => {
     if (swipe === "right" && current > 0 && isDesktop === false && allColorsReady === true) {
@@ -710,10 +739,9 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
     const isDesktop = useDesktopDetect();
 
   const handleColorReady = useCallback(() => {
+    // Colors are processed in background, no longer blocking initial render
     colorReadyCount.current += 1;
-    if (colorReadyCount.current === projects.length) {
-      setAllColorsReady(true);
-    }
+    // setAllColorsReady is already true, so this doesn't block anything
   }, [projects.length]);
 
   useEffect(() => {
@@ -744,11 +772,10 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
       }}
       initial={{ opacity: 0 }}
       animate={{ 
-        opacity: allColorsReady ? 1 : 0
+        opacity: 1 // Always show immediately since allColorsReady is true
       }}
       transition={{ 
-        duration: 0.5, 
-        delay: allColorsReady ? 0.3 : 0 
+        duration: 0.2 // Faster transition for immediate loading
       }}
     >
             <motion.div 
@@ -920,6 +947,11 @@ const [showBottomFade, setShowBottomFade] = useState(false);
       return;
     }
 
+    // Use default colors first for instant loading, then process in background
+    setColor("#ffffff");
+    setTextColor("#000000");
+    onColorReady(); // Call immediately to not block rendering
+
     if (firstMedia.type === "video") {
       const video = videoRef.current;
       video.crossOrigin = "anonymous";
@@ -956,16 +988,18 @@ const [showBottomFade, setShowBottomFade] = useState(false);
 
     const base64 = canvas.toDataURL("image/jpeg");
 
-    try {
-      const colors = await prominent(base64, { amount: 6, format: "hex" });
-      const mostColorful = getMostColorful(colors);
-      setColor(mostColorful);
-      setTextColor(getColorByBgColor(mostColorful));
-      onColorReady();
-    } catch (error) {
-      console.error("Error getting prominent color:", error);
-      onColorReady(); // Still call onColorReady to avoid blocking the process
-    }
+    // Process colors in background without blocking
+    setTimeout(async () => {
+      try {
+        const colors = await prominent(base64, { amount: 3, format: "hex" }); // Reduced from 6 to 3 for faster processing
+        const mostColorful = getMostColorful(colors);
+        setColor(mostColorful);
+        setTextColor(getColorByBgColor(mostColorful));
+      } catch (error) {
+        console.error("Error getting prominent color:", error);
+        // Keep default colors if processing fails
+      }
+    }, 100); // Small delay to not block initial render
   }, [data, onColorReady]);
 
   useEffect(() => {
