@@ -2,7 +2,7 @@
 
 import React, { useMemo, useEffect, useState, useRef, useCallback } from 'react';
 import { combineCollections, RichText } from 'readcv';
-import { motion, useSpring, useTransform, useAnimate } from 'framer-motion';
+import { motion, useSpring, useTransform, useAnimate, AnimatePresence } from 'framer-motion';
 import {useSwipeable} from 'react-swipeable'
 
 // Import flipbook data
@@ -125,6 +125,62 @@ const flipbookData = {
       "company": ""
     },
     {
+      "id": "business-cards-section",
+      "year": "2024-2025",
+      "heading": "Business Cards Design",
+      "url": null,
+      "collaborators": [],
+      "description": "Professional business card designs for various clients and brands",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/buisness cards/bizzcard_divsoma.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/buisness cards/bizzcard_kalratri.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/buisness cards/bizzcards_pushpak.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/buisness cards/WhatsApp Image 2025-03-20 at 13.23.19.jpeg"
+        }
+      ],
+      "type": "project",
+      "title": "Business Cards Design",
+      "company": ""
+    },
+    {
+      "id": "pitch-decks-section",
+      "year": "2023-2024",
+      "heading": "Pitch Decks & Presentations",
+      "url": null,
+      "collaborators": [],
+      "description": "Creative pitch deck designs for startups and business presentations",
+      "attachments": [
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/PitchDecks/FREE_The-Urbans-Night-Billboards-Mockup-Series_01.png"
+        }
+      ],
+      "type": "project",
+      "title": "Pitch Decks & Presentations",
+      "company": ""
+    },
+    {
       "id": "vCzeZzJDVqHiVpC9jgsM",
       "year": "2023",
       "heading": "Social Media",
@@ -155,6 +211,24 @@ const flipbookData = {
           "width": 3112,
           "height": 4000,
           "url": "/content/flipbook/media/Social-Media-Designer-at-Hades-Group-4.jpg"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/social_media/1.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/social_media/2.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/social_media/3.png"
         }
       ],
       "type": "project",
@@ -352,6 +426,36 @@ const flipbookData = {
           "width": 1080,
           "height": 1920,
           "url": "/content/flipbook/media/Club-Posters-8.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/club_posters/27 Feb_SC_BE_1.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/club_posters/gg.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/club_posters/Lehar_BE_8.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/club_posters/Poster Portrait.png"
+        },
+        {
+          "type": "image",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/club_posters/thalassa (1).png"
         }
       ],
       "type": "sideProject",
@@ -462,6 +566,13 @@ function Flipbook() {
       overflowX: 'hidden',
       position: 'relative'
     }} {...handlers}>
+      {/* Loading Spinner */}
+      <AnimatePresence>
+        {!allColorsReady && (
+          <LoadingSpinner />
+        )}
+      </AnimatePresence>
+      
       <ColorPapers swipe={swipe} setSwipe={setSwipe} current={current} setCurrent={setCurrent} projects={projects} allColorsReady={allColorsReady} setAllColorsReady={setAllColorsReady} cv={flipbookData}/>
       {isDesktop === true && allColorsReady && (
         <div style={{
@@ -631,7 +742,7 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
   const totalRotations = Math.floor(current / (projects.length+1));
     const currentIndex = current % (projects.length+1);
   return (
-    <div
+    <motion.div
       style={{
         perspective: 2800,
         position: "fixed",
@@ -645,6 +756,14 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
             : `calc(100% - ${mobilePaperPadding} * 2)`,
         overflow: "visible",
         zIndex:10
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ 
+        opacity: allColorsReady ? 1 : 0
+      }}
+      transition={{ 
+        duration: 0.5, 
+        delay: allColorsReady ? 0.3 : 0 
       }}
     >
             <motion.div 
@@ -737,7 +856,7 @@ function ColorPapers({ swipe, setSwipe, current, setCurrent, projects, allColors
         />
       ))}
      
-    </div>
+    </motion.div>
      
   );
 }
@@ -1592,5 +1711,38 @@ export const useDesktopDetect = () => {
 
   return isDesktop;
 };
+
+// Loading Spinner Component
+function LoadingSpinner() {
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="flipbook-loading-overlay"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flipbook-spinner"></div>
+        <motion.div
+          className="flipbook-loading-text"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          Loading Portfolio
+        </motion.div>
+        <motion.div
+          className="flipbook-loading-subtext"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          Preparing content for viewing...
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
 export default Flipbook;
