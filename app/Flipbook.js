@@ -174,6 +174,34 @@ const flipbookData = {
           "width": 1920,
           "height": 1080,
           "url": "/content/flipbookdata/PitchDecks/FREE_The-Urbans-Night-Billboards-Mockup-Series_01.png"
+        },
+        {
+          "type": "pdf",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/PitchDecks/Rage Final-compressed.pdf",
+          "title": "Rage Final Pitch Deck"
+        },
+        {
+          "type": "pdf",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/PitchDecks/Aatma-NirbharDeck.pdf",
+          "title": "Aatma Nirbhar Pitch Deck"
+        },
+        {
+          "type": "pdf",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/PitchDecks/DIVSOMALLPDeck.pdf",
+          "title": "Divsoma Pitch Deck"
+        },
+        {
+          "type": "pdf",
+          "width": 1920,
+          "height": 1080,
+          "url": "/content/flipbookdata/PitchDecks/Tropikulture_ Cultural Collective.pdf",
+          "title": "Tropikulture Cultural Collective"
         }
       ],
       "type": "project",
@@ -927,6 +955,14 @@ const [showBottomFade, setShowBottomFade] = useState(false);
     const context = canvas.getContext("2d");
     const firstMedia = data[0];
 
+    // Skip color processing for PDFs and use default color
+    if (firstMedia.type === "pdf") {
+      setColor("#2563eb"); // Use a default blue color for PDFs
+      setTextColor(getColorByBgColor("#2563eb"));
+      onColorReady();
+      return;
+    }
+
     if (firstMedia.type === "video") {
       const video = videoRef.current;
       video.crossOrigin = "anonymous";
@@ -1167,6 +1203,222 @@ const [showBottomFade, setShowBottomFade] = useState(false);
                   draggable={false}
 
                 />
+              ) : item.type === "pdf" ? (
+                <motion.div
+                  style={{
+                    height: isDesktop === true ? "100%" : "350px",
+                    width: isDesktop === false ? "100%" : "450px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    borderRadius: "16px",
+                    background: `linear-gradient(135deg, 
+                      rgba(99, 102, 241, 0.8) 0%, 
+                      rgba(168, 85, 247, 0.8) 35%, 
+                      rgba(236, 72, 153, 0.8) 70%, 
+                      rgba(251, 146, 60, 0.8) 100%)`,
+                    position: "relative",
+                    cursor: "pointer",
+                    overflow: "hidden",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1)",
+                    padding: "24px",
+                    backdropFilter: "blur(10px)"
+                  }}
+                  onClick={() => window.open(item.url, '_blank')}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.2)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  {/* Animated background decoration */}
+                  <motion.div
+                    style={{
+                      position: "absolute",
+                      top: "-50%",
+                      right: "-50%",
+                      width: "200%",
+                      height: "200%",
+                      background: "radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)",
+                      pointerEvents: "none"
+                    }}
+                    animate={{
+                      rotate: 360,
+                      scale: [1, 1.2, 1]
+                    }}
+                    transition={{
+                      rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                      scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                  />
+                  
+                  {/* PDF Icon with animation */}
+                  <motion.div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      zIndex: 2
+                    }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <motion.div
+                      style={{
+                        fontSize: isDesktop ? "64px" : "48px",
+                        marginBottom: "12px",
+                        filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.3))"
+                      }}
+                      animate={{
+                        y: [0, -8, 0]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      📋
+                    </motion.div>
+                    
+                    {/* Creative title design */}
+                    <div
+                      style={{
+                        color: "white",
+                        textAlign: "center",
+                        fontSize: isDesktop ? "20px" : "16px",
+                        fontWeight: "700",
+                        marginBottom: "8px",
+                        textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                        letterSpacing: "0.5px",
+                        lineHeight: "1.2"
+                      }}
+                    >
+                      {item.title || "PDF Document"}
+                    </div>
+                    
+                    {/* Subtitle with badge design */}
+                    <motion.div
+                      style={{
+                        background: "rgba(255,255,255,0.2)",
+                        color: "white",
+                        textAlign: "center",
+                        fontSize: isDesktop ? "14px" : "12px",
+                        fontWeight: "500",
+                        padding: "6px 16px",
+                        borderRadius: "20px",
+                        border: "1px solid rgba(255,255,255,0.3)",
+                        backdropFilter: "blur(10px)"
+                      }}
+                      whileHover={{ 
+                        background: "rgba(255,255,255,0.3)",
+                        scale: 1.05
+                      }}
+                    >
+                      View Presentation
+                    </motion.div>
+                  </motion.div>
+                  
+                  {/* Bottom section with decorative elements */}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      width: "100%",
+                      zIndex: 2
+                    }}
+                  >
+                    <motion.div
+                      style={{
+                        display: "flex",
+                        gap: "8px"
+                      }}
+                    >
+                      {[0, 1, 2].map((i) => (
+                        <motion.div
+                          key={i}
+                          style={{
+                            width: "8px",
+                            height: "8px",
+                            borderRadius: "50%",
+                            background: "rgba(255,255,255,0.6)"
+                          }}
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.6, 1, 0.6]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: i * 0.3
+                          }}
+                        />
+                      ))}
+                    </motion.div>
+                    
+                    <motion.div
+                      style={{
+                        color: "white",
+                        fontSize: "18px",
+                        opacity: 0.8
+                      }}
+                      whileHover={{ 
+                        opacity: 1,
+                        rotate: 45,
+                        scale: 1.2
+                      }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      ↗
+                    </motion.div>
+                  </div>
+                  
+                  {/* Decorative corner elements */}
+                  <motion.div
+                    style={{
+                      position: "absolute",
+                      top: "16px",
+                      left: "16px",
+                      width: "20px",
+                      height: "20px",
+                      border: "2px solid rgba(255,255,255,0.3)",
+                      borderRadius: "4px",
+                      pointerEvents: "none"
+                    }}
+                    animate={{
+                      rotate: [0, 90, 0]
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  <motion.div
+                    style={{
+                      position: "absolute",
+                      bottom: "16px",
+                      right: "60px",
+                      width: "16px",
+                      height: "16px",
+                      background: "rgba(255,255,255,0.2)",
+                      borderRadius: "50%",
+                      pointerEvents: "none"
+                    }}
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.5, 1, 0.5]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </motion.div>
               ) : (
                 <video
                   src={item.url}
